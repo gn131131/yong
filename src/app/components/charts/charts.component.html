@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="charts">
+    <div class="echarts" echarts (chartInit)="chartInit($event)" [options]="chartOptions"></div>
+  </div>
+  <div class="table-wrapper" style="flex: 1; overflow: auto;">
+    <div class="panel">
+      <div class="panel-heading">
+        <button class="btn btn-success" (click)="onAdd()">添加</button>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>一维</th>
+              <th>二维</th>
+              <th>三维</th>
+              <th>四维</th>
+              <th>五维</th>
+              <th>六维</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list">
+              <td>
+                <input class="form-control" [(ngModel)]="item.name" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i1" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i2" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i3" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i4" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i5" (blur)="setOptions()">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="item.i6" (blur)="setOptions()">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
